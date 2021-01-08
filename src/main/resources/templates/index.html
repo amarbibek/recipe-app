@@ -5,7 +5,17 @@
     <title>Recipe App</title>
 </head>
 <body>
-    <h2>My Recipes example </h2>
+<h2>My Recipes </h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="recipe:${recipes}">
+        <td th:text="${recipe.id}"></td>
+        <td th:text="${recipe.description}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
