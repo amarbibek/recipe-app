@@ -1,7 +1,11 @@
 package com.mycodestuffs.recipeapp.domain;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {
     @javax.persistence.Id
@@ -12,6 +16,9 @@ public class Notes {
     @Lob
     private String recipeNotes;
 
+    public Notes() {
+    }
+
     public Long getId() {
         return Id;
     }
@@ -20,19 +27,8 @@ public class Notes {
         Id = id;
     }
 
-    public Recipe getRecipe() {
-        return recipe;
+    protected boolean canEqual(final Object other) {
+        return other instanceof Notes;
     }
 
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
-    }
-
-    public String getRecipeNotes() {
-        return recipeNotes;
-    }
-
-    public void setRecipeNotes(String recipeNotes) {
-        this.recipeNotes = recipeNotes;
-    }
 }
