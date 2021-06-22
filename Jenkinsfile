@@ -1,6 +1,6 @@
 pipeline {
-// 	agent any
-	agent { docker { image 'maven:3.8.1'} }
+	agent any
+// 	agent { docker { image 'maven:3.8.1'} }
 	// agent { docker { image 'node:13.8'} }
 // 	environment {
 // 		dockerHome = tool 'myDocker'
@@ -12,7 +12,7 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				sh 'mvn --version'
-// 				sh 'docker version'
+				sh 'docker version'
 // 				echo "Build"
 // 				echo "PATH - $PATH"
 // 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
