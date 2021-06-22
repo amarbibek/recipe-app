@@ -31,15 +31,18 @@ pipeline {
 		}
 		stage('Compile') {
 			steps {
-				sh "mvn clean compile"
+				sh 'cd Backend/commons'
+				sh 'mvn clean install'
+				sh '../service-discovery'
+				sh "mvn clean install"
 			}
 		}
 
-		stage('Test') {
-			steps {
-				sh "mvn test"
-			}
-		}
+// 		stage('Test') {
+// 			steps {
+// 				sh "mvn test"
+// 			}
+// 		}
 
 		 
  
