@@ -12,7 +12,7 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				sh 'mvn --version'
-				sh 'docker version'
+// 				sh 'docker version'
 				echo "Build"
 				echo "PATH - $PATH"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
@@ -21,6 +21,11 @@ pipeline {
 				echo "BUILD_TAG - $env.BUILD_TAG"
 				echo "BUILD_URL - $env.BUILD_URL"
 			}
+		}
+		stage("GIt CHeckout") {
+			git branch: 'deployment',
+			    credentialsId: '08c1cad0-e0cb-4bb8-89ca-fec9f4933c78',
+			    url: 'https://github.com/rraman9/recalchatbotmob.git'
 		}
 		stage('Compile') {
 			steps {
