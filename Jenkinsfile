@@ -1,6 +1,11 @@
 pipeline{
     agent any
     stages{
+	    stage("Maven"){
+            steps{
+                echo("mvn --version")
+            }
+        }
         stage("Build"){
             steps{
                 echo("Build")
