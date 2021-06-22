@@ -31,7 +31,8 @@ pipeline {
 		}
 		stage('Compile') {
 			steps {
-				sh 'cd Backend/commons'
+				sh "pwd"
+				sh 'cd ../Backend/commons'
 				sh 'mvn clean install'
 				sh '../service-discovery'
 				sh "mvn clean install"
