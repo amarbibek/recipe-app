@@ -25,3 +25,4 @@ pipeline{
 		}
 	}
 }
+// checking automatic build trigger
