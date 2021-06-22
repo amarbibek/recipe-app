@@ -22,13 +22,13 @@ pipeline {
 				echo "BUILD_URL - $env.BUILD_URL"
 			}
 		}
-		stage("GIt CHeckout") {
-			steps {
-				git branch: 'deployment',
-				    credentialsId: '08c1cad0-e0cb-4bb8-89ca-fec9f4933c78',
-				    url: 'https://github.com/rraman9/recalchatbotmob.git'
-			}
-		}
+// 		stage("GIt CHeckout") {
+// 			steps {
+// 				git branch: 'deployment',
+// 				    credentialsId: '08c1cad0-e0cb-4bb8-89ca-fec9f4933c78',
+// 				    url: 'https://github.com/rraman9/recalchatbotmob.git'
+// 			}
+// 		}
 		stage('Compile') {
 			steps {
 				sh "pwd"
